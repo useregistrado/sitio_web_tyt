@@ -1,3 +1,5 @@
+const { findAll } = require("./mysql")
+
 const db = {
     'user': [
         { id: '1', name: 'Carlos' },
@@ -10,7 +12,7 @@ return db[tabla] || []
 }
 
 async function get(tabla, id) {
-let col = await list(tabla)
+let col = await findAll(tabla)
 return col.filter(item => item.id === id)[0] || null
 }
 

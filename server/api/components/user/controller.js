@@ -1,6 +1,6 @@
-const store = require('../../../store/dummys')
+const store = require('../../../store/mysql')
 const auth = require('../auth')
-const TABLA = 'user'
+const TABLA = 'customer'
 
 module.exports =function (injectedStore) {
     let store = injectedStore
@@ -9,12 +9,15 @@ module.exports =function (injectedStore) {
     }
 
     function list() {
-        return store.list(TABLA)
+
+        return store.findByColumns(TABLA, "document")
+        //return store.findByColumns(TABLA, ["customer_id", "email"], [">", "="], [1, "'oscar.vargas07@uptc.edu.co'"])
+
     }
     
     function get(id){
         
-        return store.getregistro(TABLA, id)
+        return store.findOne(TABLA, id)
     }
 
     async function upsert(body) {
