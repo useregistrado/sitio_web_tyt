@@ -10,7 +10,7 @@ module.exports =function (injectedStore) {
 
     function list() {
 
-        return store.findByColumns(TABLA, "document")
+        return store.findAll(TABLA)
         //return store.findByColumns(TABLA, ["customer_id", "email"], [">", "="], [1, "'oscar.vargas07@uptc.edu.co'"])
 
     }
