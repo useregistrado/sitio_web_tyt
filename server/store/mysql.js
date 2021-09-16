@@ -26,4 +26,15 @@ connection.query('SELECT * FROM customer', function (error, results, fields) {
     });
 });
 
-connection.end();
+function list(){
+    return new Promise( (resolve, reject) => {
+        connection.query('SELECT * FROM customer', (error, data) => {
+            if (error) return reject(error)
+            resolve(data)
+        })
+    })
+}
+
+module.exports = {
+    list,
+}
