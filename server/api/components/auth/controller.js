@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const bcrypt = require('bcrypt')
 const auth = require('../../../auth')
 const TABLA = 'auth'
@@ -47,36 +46,3 @@ module.exports = function (injectedStore) {
         login,
     }
 }
-=======
-const auth = require('.');
-
-const TABLA = 'auth'
-module.exports = function (injectedStore) {
-    let store = injectedStore
-    if(!store){
-        store = require('./../../../store/dummys')
-    }
-    
-    function upsert(data) {
-        console.log("por aqui paso -*");
-        const authData = {
-            id: data.id
-        }
-
-        if (data.username){
-            authData.username = data.username;
-        }
-
-        if (data.password){
-            authData.password = data.password;
-        }
-        
-        return store.upsert(TABLA, authData)
-    }
-
-    return {
-        upsert
-    }
-}
-
->>>>>>> 495dcdb (added some files based in the course of platzi)
