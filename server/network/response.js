@@ -1,3 +1,4 @@
+
 const statusMessage = {
     '200': 'Ok',
     '201': 'Created',
@@ -31,7 +32,4 @@ res.status(statusCode).send({
 })
 
 }
-
-
-
 
