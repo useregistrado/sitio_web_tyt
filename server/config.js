@@ -6,6 +6,14 @@ module.exports = {
 
   jwt: {
     secret: process.env.JWT_SECRET || 'notasecret!'
+  },
+
+  mysql: {
+    host     : 'localhost',
+    database : 'dbproject',
+    user     : 'fazt',
+    password : 'password',
+    
   }
 }
 

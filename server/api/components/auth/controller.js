@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt')
 const auth = require('../../../auth')
-const TABLA = 'auth'
+const TABLA = 'AUTH'
 
 module.exports = function (injectedStore) {
     let store = injectedStore
@@ -26,16 +26,8 @@ module.exports = function (injectedStore) {
 
     async function upsert(data) {
         const authData = {
-            id: data.id,
-        }
-
-        if (data.username) {
-            authData.username = data.username
-        }
-
-        if (data.password) {
-            // hash pide la informacion a encriptar y las veces a ejecutar el algortimo de encriptado
-            authData.password = await bcrypt.hash(data.password,3)
+            username: data.username,
+            password: await bcrypt.hash(data.password,3)
         }
 
         return store.upsert(TABLA, authData)

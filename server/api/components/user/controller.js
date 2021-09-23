@@ -1,6 +1,6 @@
-const store = require('../../../store/dummys')
+
 const auth = require('../auth')
-const TABLA = 'user'
+const TABLA = 'CUSTOMER'
 
 module.exports =function (injectedStore) {
     let store = injectedStore
@@ -18,22 +18,26 @@ module.exports =function (injectedStore) {
     }
 
     async function upsert(body) {
-        
+        console.log(body)
         const user = {
             name: body.name,
-            username: body.username
-        }
+            username: body.document,
+            document_type: body.document_type,
+            document: body.document,
+            phone_number: body.phone_number,
+            email: body.email,
+            billing_email: body.billing_email,
+            }
         
-        if (body.password || body.username){
+        if (body.password || user.username){
             
-            await auth.upsert('user',{
-                id: body.id,
-                username: body.username,
-                password: body.password
-                
-            })
-           
+            await auth.upsert({
+                username: user.username,
+                password: body.password               
+            })       
         }
+
+        return store.upsert(TABLA, user)
 
     }
 
