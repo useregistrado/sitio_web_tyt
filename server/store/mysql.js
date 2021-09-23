@@ -1,3 +1,4 @@
+
 const mysql = require('mysql2');
 const config = require('../config')
 
@@ -39,13 +40,16 @@ function query(table, query){
         connection.query(`SELECT * FROM ${table} WHERE ?`, query, (err,res)=>{
             if(err) return reject(err)
             resolve(res[0] || null)
+
         })
     })
 }
 
+
 function list(table){
     return new Promise( (resolve, reject) => {
         connection.query(`SELECT * FROM ${table}`, (error, data) => {
+
             if (error) return reject(error)
             resolve(data)
         })
@@ -62,7 +66,9 @@ function upsert(table, data){
 }
 
 module.exports = {
+
     list,
     upsert,
     query,
+
 }

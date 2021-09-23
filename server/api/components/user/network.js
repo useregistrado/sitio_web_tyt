@@ -16,9 +16,9 @@ router.post('/',remove)
 // Internal functions
 //
 function list (req, res, next){
-  controller.list()
+  controller.list('customer')
     .then((lista)=>{
-      response.success(req,res, lista,200)
+      response.success(req,res, lista, 200)
     })
     .catch(next)
 }
