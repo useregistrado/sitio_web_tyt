@@ -1,0 +1,7 @@
+GET
+/users
+/users/:id
+/users/:id/transactions
+/users/:id/transactions/:id
+/users/:id/invoices
+/users/:id/invoices/:id
