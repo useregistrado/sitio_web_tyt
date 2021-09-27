@@ -1,4 +1,4 @@
-const TABLA = 'CONTRACT'
+const TABLA = 'INVOICE'
 
 module.exports =function (injectedStore) {
     let store = injectedStore
@@ -22,20 +22,20 @@ module.exports =function (injectedStore) {
 
     async function upsert(body) {
         
-        const contract = {
-            initial_date: body.initial_date,
-            address: body.address,
-            customer_id: body.customer_id,
-            plan_id: body.plan_id,
-            additional_price: body.additional_price,
+        const invoice = {
+            generation_date: body.generation_date,
+            amount: body.amount,
+            additional_amount: body.additional_amount,
+            payment_status: body.payment_status,
+            contract_id: body.contract_id,
             
             }
-        if(body.contract_id){
-            plan.plan_id = body.contract_id
+        if(body.invoice_id){
+            plan.invoice_id = body.invoice_id
         }
         
         
-        return store.upsert(TABLA, contract)
+        return store.upsert(TABLA, invoice)
 
     }
 
