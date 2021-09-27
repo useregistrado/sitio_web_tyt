@@ -3,6 +3,7 @@ const express = require('express')
 const config = require('../config.js')
 const user = require('./components/user/network')
 const auth = require('./components/auth/network')
+const plan = require('./components/plan/network')
 const errors = require('../network/errors')
 
 const app = express()
@@ -13,6 +14,7 @@ app.use(express.urlencoded({ extended: true}))
 //router
 app.use('/api/user', user)
 app.use('/api/auth', auth)
+app.use('/api/plan', plan)
 
 app.use(errors)
 

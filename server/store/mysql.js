@@ -76,15 +76,6 @@ function insert(table, data){
     })
 }
 
-function update(table, data){
-    return new Promise( (resolve,reject)=>{
-        connection.query(`UPDATE ${table} SET ? WHERE ${table}_ID=?`, [data, data.id], (err,result)=>{
-            if(err) return reject(err)
-            resolve(result)
-        })
-    })
-}
-
 
 
 function upsert(table, data){
@@ -96,13 +87,22 @@ function upsert(table, data){
     })
 }
 
+function remove(table, data){
+    return new Promise( (resolve,reject)=>{
+        connection.query(`DELETE FROM ${table} WHERE ${table}_ID=?`, data, (err,result)=>{
+            if(err) return reject(err)
+            resolve(result)
+        })
+    })
+}
+
 module.exports = {
 
     list,
     get,
     insert,
-    update,
     upsert,
     query,
+    remove
 
 }

@@ -1,5 +1,4 @@
 const auth = require('../auth')
-const nanoid = require('nanoid')
 const TABLA = 'CUSTOMER'
 
 

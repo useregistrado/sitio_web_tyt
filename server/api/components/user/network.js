@@ -16,7 +16,7 @@ router.post('/',remove)
 // Internal functions
 //
 function list (req, res, next){
-  controller.list('customer')
+  controller.list()
     .then((lista)=>{
       response.success(req,res, lista, 200)
     })
@@ -42,13 +42,7 @@ function remove(req, res) {
   
 }
 
-function update(req,res){
-  controller.update(req.body)
-    .then((user)=>{
-      response.success(req,res, user,201)
-    })
-    .catch(next)
-}
+
 
 
 
