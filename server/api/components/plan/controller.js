@@ -1,4 +1,4 @@
-const auth = require('../auth')
+
 const TABLA = 'PLAN'
 
 module.exports =function (injectedStore) {
