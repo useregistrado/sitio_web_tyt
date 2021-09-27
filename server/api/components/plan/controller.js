@@ -31,8 +31,8 @@ module.exports =function (injectedStore) {
             location_type: body.location_type,
             service_type: body.service_type,
             }
-        if(body.customer_id){
-            plan.plan_id = body.customer_id
+        if(body.plan_id){
+            plan.plan_id = body.plan_id
         }
         
         

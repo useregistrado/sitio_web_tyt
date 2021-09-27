@@ -12,12 +12,6 @@ module.exports =function (injectedStore) {
     }
     
 
-    function remove(id){     
-        return store.remove(TABLA, id)
-    }
-
-    
-
     async function upsert(body) {
         
         const contact = {
@@ -35,6 +29,6 @@ module.exports =function (injectedStore) {
     return {
         list,
         upsert,
-        remove,
+        
     }
 }

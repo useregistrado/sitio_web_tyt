@@ -31,7 +31,7 @@ module.exports =function (injectedStore) {
             
             }
         if(body.invoice_id){
-            plan.invoice_id = body.invoice_id
+            invoice.invoice_id = body.invoice_id
         }
         
         

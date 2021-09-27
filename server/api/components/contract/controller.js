@@ -31,7 +31,7 @@ module.exports =function (injectedStore) {
             
             }
         if(body.contract_id){
-            plan.plan_id = body.contract_id
+            contract.contract_id = body.contract_id
         }
         
         
