@@ -1,6 +1,5 @@
-
-
 const auth = require('../auth')
+const nanoid = require('nanoid')
 const TABLA = 'CUSTOMER'
 
 
@@ -15,11 +14,15 @@ module.exports =function (injectedStore) {
     }
     
     function get(id){     
-        return store.findOne(TABLA, id)
+        return store.get(TABLA, id)
+    }
+
+    function query(username){
+        return store.query(TABLA, { username: username })
     }
 
     async function upsert(body) {
-        console.log(body)
+        
         const user = {
             name: body.name,
             username: body.document,
@@ -29,18 +32,21 @@ module.exports =function (injectedStore) {
             email: body.email,
             billing_email: body.billing_email,
             }
+        if(body.customer_id){
+            user.customer_id = body.customer_id
+        }
         
-        if (body.password || user.username){
-            
+        if (!body.customer_id){
             await auth.upsert({
                 username: user.username,
                 password: body.password               
             })       
         }
-
+        
         return store.upsert(TABLA, user)
 
     }
+
 
     return {
         list,

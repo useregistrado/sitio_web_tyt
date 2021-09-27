@@ -16,9 +16,8 @@ const check ={
     own: function (req, owner) {
         const decoded = decodeHeader(req)
         console.log(decoded)
-
         // comprovar si es o no propio
-        if(decoded.id !== owner){
+        if(decoded.auth_id !== owner){
             throw error('No puedes hacer esto', 401)
         }
     }

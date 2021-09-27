@@ -56,9 +56,40 @@ function list(table){
     })
 }
 
-function upsert(table, data){
+
+function get(table, id){
+    return new Promise( (resolve,reject)=>{
+        connection.query(`SELECT * FROM ${table} WHERE ${table}_ID='${id}'`, (err,data)=>{
+            if(err) return reject(err)
+            resolve(data)
+        })
+    })
+}
+
+
+function insert(table, data){
     return new Promise( (resolve,reject)=>{
         connection.query(`INSERT INTO ${table} SET ?`,data, (err,result)=>{
+            if(err) return reject(err)
+            resolve(result)
+        })
+    })
+}
+
+function update(table, data){
+    return new Promise( (resolve,reject)=>{
+        connection.query(`UPDATE ${table} SET ? WHERE ${table}_ID=?`, [data, data.id], (err,result)=>{
+            if(err) return reject(err)
+            resolve(result)
+        })
+    })
+}
+
+
+
+function upsert(table, data){
+    return new Promise( (resolve,reject)=>{
+        connection.query(`INSERT INTO ${table} SET ? ON DUPLICATE KEY UPDATE ?`,[data,data], (err,result)=>{
             if(err) return reject(err)
             resolve(result)
         })
@@ -68,6 +99,9 @@ function upsert(table, data){
 module.exports = {
 
     list,
+    get,
+    insert,
+    update,
     upsert,
     query,
 

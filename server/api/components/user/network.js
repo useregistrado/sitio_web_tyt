@@ -43,7 +43,11 @@ function remove(req, res) {
 }
 
 function update(req,res){
-
+  controller.update(req.body)
+    .then((user)=>{
+      response.success(req,res, user,201)
+    })
+    .catch(next)
 }
 
 
