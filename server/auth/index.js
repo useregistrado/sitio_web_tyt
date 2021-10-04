@@ -5,7 +5,10 @@ const error = require('../utils/error')
 
 function sign(data) {
     let jsonData = JSON.parse(JSON.stringify(data))
-    return jwt.sign(jsonData,secret)
+    return jwt.sign({
+        exp: Math.floor(Date.now() / 1000) + (60 * 60),
+        data: jsonData
+    }, secret)
 }
 
 function verify(token){
@@ -20,7 +23,15 @@ const check ={
         if(decoded.auth_id !== owner){
             throw error('No puedes hacer esto', 401)
         }
+    },
+    isAdmin: function (req, admins) {
+        const decoded = decodeHeader(req) 
+    },
+    sendtoken: function(req) {
+        sendToken(req)
     }
+
+
 }
 
 function getToken(auth) {
@@ -34,6 +45,12 @@ function getToken(auth) {
     }
     let token = auth.replace('Bearer ','')
     return token
+}
+
+function sendToken (req){
+    const authorization = req.headers.authorization || ''
+    const token = getToken(authorization)
+    const decoded = verify(token)
 }
 
 function decodeHeader(req){

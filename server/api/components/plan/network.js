@@ -1,16 +1,18 @@
 const express = require('express')
 const response = require('../../../network/response')
 const controller = require('./index')
+const secure = require('../user/secure')
+
 
 const router = express.Router()
 
 
 // Routes
-router.get('/',list)
+router.get('/',secure('listplan'),list)
 router.get('/:id',get)
 router.post('/',upsert)
 router.put('/',upsert)
-router.delete('/:id',remove)
+router.delete('/:id',secure('deleteplan'),remove)
 
 // Internal functions
 //
@@ -40,7 +42,7 @@ function upsert(req, res,next){
 function remove(req, res, next) {
     controller.remove(req.params.id)
     .then((user)=>{
-        response.success(req,res, user,201)
+        response.success(req,res, user,200)
     })
     .catch(next)
 
