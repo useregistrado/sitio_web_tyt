@@ -1,0 +1,388 @@
+:root{
+    --primary: #1B262C;
+    --secondary: #0F4C75;
+    --blueOne: #3282B8;
+    --blueTwo:#BBE1FA;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-size: 14px;
+}
+
+body{
+    background-color: #f4f4f4 !important;
+    font-family: 'DM Sans', sans-serif !important;
+}
+
+h3 {
+    font-size: 40px !important;
+    font-weight: 900 !important;
+    color: var(--secondary);
+}
+
+h4 {
+    font-size: 18px !important;
+    margin-top: 10px !important;
+}
+
+h5 {
+    font-size: 40px !important;
+    font-weight: 900 !important;
+    color: var(--secondary);
+}
+
+/*========================================== NAVBAR ====================================================*/
+
+a:visited, a:link, a:hover, a:active {
+    font-size: 18px;
+    text-decoration:none;
+}
+
+
+.btn-pay-div a:hover {
+    color: #fff;
+}
+
+.btn-pay-div a:link {
+    color: var(--primary);
+}
+
+.btn-pay-div a:active {
+    color: var(--primary);
+}
+
+.btn-pay-div a:visited {
+    color: var(--primary);
+}
+
+
+
+.btn-opt a:link {
+    color: white;
+}
+
+.btn-opt a:active {
+    color: var(--primary);
+}
+
+.btn-opt a:hover {
+    color: var(--blueTwo);
+}
+
+.btn-opt a:visited {
+    color: #fff;
+}
+
+h2 {
+    color: white;
+    display: inline;
+    font-size: 22px !important;
+}
+
+.navbar{
+    width: 100%;
+    max-height: 60px;
+    background-color:var(--secondary);
+    display: flex;
+    justify-content: space-between;
+    -webkit-box-shadow: 0px 10px 23px -13px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 23px -13px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 23px -13px rgba(0,0,0,0.75);
+}
+
+.navbar img {
+    width: 25px;
+    height: 45px;
+    display: inline;
+    margin:0 10px 10px 10px;
+    padding: 0;
+}
+
+.navbar_r {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+}
+
+.btn-pay {
+    display: inline;    
+    border-radius: 10px;
+    width: 180%;
+    text-align: center;
+    background-color: var(--blueTwo);
+    font-weight: bold;
+    padding: 2px 15px;
+
+}
+
+.btn-pay:hover {
+    background-color: #fff;
+}
+
+
+
+.separator {
+    border-style: none;
+    border-right: solid #fff 1px;
+    height: 30px;
+}
+
+/*========================================== END NAVBAR ====================================================*/
+
+/*========================================== SLIDER ========================================================*/
+
+.img-slider {
+    margin-top: 0px;
+}
+
+.header__title-container {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    border-radius: 15px;
+    width: 20%;
+    margin: auto;
+    position: relative;
+    bottom: 25px;
+    background: #fff;
+    height: 50px;
+    -webkit-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.65);
+    -moz-box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.65);
+    box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.65);
+
+}
+
+.header__button {
+    text-align: center;
+    width: 100%;
+}
+  
+ 
+
+/*========================================== END SLIDER =======================================================*/
+
+
+/*========================================== SERVICES =========================================================*/
+
+.services {
+    margin-top: 50px;
+}
+
+.card{
+    border-radius: 10px !important;
+    max-width: 280px;
+}
+
+.div-card{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    color: var(--secondary);
+    margin: 0px !important;
+}
+
+.div-title-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -35px;
+    background-color: var(--blueOne);
+    border-radius: 8px;
+    width: 60%;
+    height: 35px;
+    color: #fff;
+}
+
+.p-megas {
+    padding: 0;
+    font-size: 110px;
+    font-weight: bold;
+    height: 120px;
+    display: flex;
+    align-items: center;
+}
+
+.div-p-megas {
+    display: inline;
+    margin-top: -40px;
+    margin-bottom: 20px;
+}
+
+.div-p-price {
+    display: inline;
+}
+
+.div-p-megas::after {
+    position: absolute;
+    content: "Megas";
+    font-size: 25px;
+    bottom: 145px;
+    left: 35%;
+    padding-left: 4px;
+}
+
+
+.p-price {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+
+.div-p-price::after {
+    position: absolute;
+    content: "Mil pesos cop";
+    font-size: 20px;
+    bottom: 50px;
+    left: 25.5%;
+    padding-left: 4px;
+}
+
+.div-p-price::before {
+    position: absolute;
+    content: "Pago Mensual*";
+    font-size: 18px;
+    bottom: 110px;
+    left: 28%;
+    padding-left: 4px;
+}
+
+.btn-a {
+    border: 2px solid var(--blueOne);
+    padding: 3px 40px;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    color: var(--secondary);
+}
+
+.btn-a:hover {
+    background-color: #e4e4e4;
+}
+
+
+/*========================================== END SERVICES =====================================================*/
+
+
+/*========================================== CONTACT =====================================================*/
+.contact {
+    margin-top: 40px;
+}
+
+.form {
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    align-items: center;
+    top: 180px;
+    left: 250px;
+    max-width: 310px;
+}
+
+.form input {
+    width: 100%;
+    text-align: center;
+    margin: 5px 2px;
+    border: 15px;
+    
+}
+
+.form-input {
+    border-radius: 5px ;
+    height:40px;
+    border: 3px solid var(--secondary) !important;
+}
+
+.form-input::placeholder {
+    color: var(--blueTwo);
+    font-size: 18px;
+}
+
+.img-contact-mujer {
+    margin-top: -90px;
+}
+
+.a-llamada {
+    background-color: var(--blueOne);
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 25px;
+    margin-top: 13px;
+}
+
+.a-llamada:hover {
+    color: var(--primary);
+}
+/*========================================== END CONTACT =====================================================*/
+
+/*========================================== MISION - VISION =========================================================*/
+.mision-vision {
+    margin-top: 40px;
+}
+
+.mision, .vision {
+    max-width: 50%;
+}
+
+._mision, ._vision {
+    display: flex;
+}
+
+._vision {
+    justify-content: end;
+    text-align: right;
+}
+
+.mision-vision p {
+    font-size: 22px;
+}
+
+/*========================================== END MISION - VISION =====================================================*/
+
+/*========================================== FOOTER =====================================================*/
+
+.footer {
+    margin-top: 25px;
+    max-height: 60px;
+    background-color:var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px;
+    
+}
+
+.footer img {
+    width: 25px;
+    height: 45px;
+    display: inline;
+    margin:0 10px 10px 10px;
+    padding: 0;
+}
+
+.footer_r {
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    
+}
+
+.btn-opt a {
+    font-size: 15px;
+}
+
+.footer_l h2 {
+    font-size: 18px;
+}
+
+.btn-opt img {
+    margin: 0px 5px 0px 0px;
+    height: 17px;
+    width: 17px;
+}
+/*========================================== END FOOTER =====================================================*/
+
+
+
