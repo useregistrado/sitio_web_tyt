@@ -83,7 +83,7 @@ export default {
       const send = {
         Authorization: 'Bearer ' + localStorage.getItem('token')
       }
-      axios.put('http://localhost/api/user/', this.form, { headers: send })
+      axios.put('https://tyt-tecnologias.com.co/api/user/', this.form, { headers: send })
         .then(data => {
           console.log(data)
           this.$router.push('/adminCustomer/')
@@ -96,7 +96,7 @@ export default {
       const send = {
         Authorization: 'Bearer ' + localStorage.getItem('token')
       }
-      axios.delete('http://localhost:3000/api/user/' + this.form.customer_id, { headers: send })
+      axios.delete('https://tyt-tecnologias.com.co/api/user/' + this.form.customer_id, { headers: send })
         .then(() => {
           this.$router.push('/adminCustomer/')
         })
@@ -104,7 +104,7 @@ export default {
   },
   mounted: function () {
     this.form.customer_id = this.$route.params.CustomerId
-    axios.get('http://localhost:3000/api/user/' + this.form.customer_id)
+    axios.get('https://tyt-tecnologias.com.co/api/user/' + this.form.customer_id)
       .then(data => {
         console.log(data)
         this.form.customer_id = data.data.body[0].customer_id

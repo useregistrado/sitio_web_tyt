@@ -335,6 +335,11 @@ h2 {
     text-align: right;
 }
 
+._mision {
+    justify-content: start;
+    text-align: left;
+}
+
 .mision-vision p {
     font-size: 22px;
 }

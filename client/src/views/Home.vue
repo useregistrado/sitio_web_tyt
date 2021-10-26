@@ -1,12 +1,11 @@
 <template>
   <div id="app">
-    <Navbar msg="Welcome to Your Vue.js App"/>
+    <Navbar/>
     <slider/>
     <services/>
     <contact/>
     <mision/>
     <footer2/>
-
   </div>
 </template>
 

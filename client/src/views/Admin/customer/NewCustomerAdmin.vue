@@ -72,7 +72,7 @@ export default {
     save () {
       this.form.location_type = this.selectedLocation
       this.form.service_type = this.selectedService
-      axios.post('http://localhost/api/user/', this.form)
+      axios.post('https://tyt-tecnologias.com.co/api/user/', this.form)
       this.$router.push('/adminCustomer/')
     },
     exit () {

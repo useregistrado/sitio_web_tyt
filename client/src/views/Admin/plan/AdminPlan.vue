@@ -60,7 +60,7 @@ export default {
     }
   },
   mounted: function () {
-    const direction = 'http://localhost/api/plan'
+    const direction = 'https://tyt-tecnologias.com.co/api/plan'
     axios.get(direction).then(data => {
       this.ListaPlanes = data.data.body
     })

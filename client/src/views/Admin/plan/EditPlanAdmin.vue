@@ -73,7 +73,7 @@ export default {
   },
   methods: {
     edit () {
-      axios.put('http://localhost/api/plan/', this.form)
+      axios.put('https://tyt-tecnologias.com.co/api/plan/', this.form)
         .then(data => {
           console.log(data)
           this.$router.push('/adminPlan/')
@@ -86,7 +86,7 @@ export default {
       const send = {
         Authorization: 'Bearer ' + localStorage.getItem('token')
       }
-      axios.delete('http://localhost:3000/api/plan/' + this.form.plan_id, { headers: send })
+      axios.delete('https://tyt-tecnologias.com.co/api/plan/' + this.form.plan_id, { headers: send })
         .then(() => {
           this.$router.push('/adminPlan/')
         })
@@ -94,7 +94,7 @@ export default {
   },
   mounted: function () {
     this.form.plan_id = this.$route.params.PlanId
-    axios.get('http://localhost:3000/api/plan/' + this.form.plan_id)
+    axios.get('https://tyt-tecnologias.com.co/api/plan/' + this.form.plan_id)
       .then(data => {
         this.form.plan_id = data.data.body[0].plan_id
         this.form.name = data.data.body[0].name

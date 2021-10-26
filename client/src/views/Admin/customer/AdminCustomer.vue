@@ -62,7 +62,7 @@ export default {
     }
   },
   mounted: function () {
-    const direction = 'http://localhost/api/user'
+    const direction = 'https://tyt-tecnologias.com.co/api/user'
     axios.get(direction).then(data => {
       this.CustomerList = data.data.body
       console.log(this.CustomertList)
