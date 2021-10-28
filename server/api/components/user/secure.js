@@ -12,11 +12,18 @@ module.exports = function checkAuth(action){
                 next()
                 break;
             case 'listplan':
-                
                 next()
                 break;
             case 'deleteplan':
                 auth.check.sendtoken(req)
+                next()
+                break;
+            case 'general':
+                auth.check.sendtoken(req)
+                next()
+                break;
+            case 'isAdmin':
+                auth.check.isAdmin(req)
                 next()
                 break;
 

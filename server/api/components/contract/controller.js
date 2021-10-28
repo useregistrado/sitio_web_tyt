@@ -28,7 +28,7 @@ module.exports =function (injectedStore) {
             customer_id: body.customer_id,
             plan_id: body.plan_id,
             additional_price: body.additional_price,
-            
+            state: body.state,
             }
         if(body.contract_id){
             contract.contract_id = body.contract_id

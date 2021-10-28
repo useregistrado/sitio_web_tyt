@@ -7,11 +7,11 @@ const router = express.Router()
 
 
 // Routes
-router.get('/',list)
-router.get('/:id',get)
-router.post('/',upsert)
-router.put('/', secure('update'),upsert)
-router.post('/',remove)
+router.get('/',secure('general'),list)
+router.get('/:id',secure('general'),get)
+router.post('/',secure('general'),upsert)
+router.put('/',secure('general'),upsert)
+router.post('/',secure('general'),remove)
 
 // Internal functions
 //

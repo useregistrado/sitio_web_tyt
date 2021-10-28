@@ -13,7 +13,12 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.3.0",
+<<<<<<< HEAD
     "nanoid": "^3.1.28"
+=======
+    "nanoid": "^3.1.28",
+    "pm2": "^5.1.2"
+>>>>>>> 27ecbeb83d1d0d90f92923d986b22a15198e3eeb
   },
   "devDependencies": {
     "nodemon": "^2.0.12"

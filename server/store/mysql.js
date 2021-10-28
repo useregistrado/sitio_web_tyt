@@ -76,8 +76,6 @@ function insert(table, data){
     })
 }
 
-
-
 function upsert(table, data){
     return new Promise( (resolve,reject)=>{
         connection.query(`INSERT INTO ${table} SET ? ON DUPLICATE KEY UPDATE ?`,[data,data], (err,result)=>{

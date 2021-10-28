@@ -25,8 +25,14 @@ const check ={
             throw error('No puedes hacer esto', 401)
         }
     },
-    isAdmin: function (req, admins) {
-        const decoded = decodeHeader(req) 
+    isAdmin: function (req, owner) {
+        const decoded = decodeHeader(req)
+        console.log(decoded)
+        console.log('Ha entra un administrador al sistema')
+        // comprovar si es o no propio
+        if(decoded.data.admin == false){
+            throw error('No eres admin', 401)
+        }
     },
     sendtoken: function(req) {
         sendToken(req)

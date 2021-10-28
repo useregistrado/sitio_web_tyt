@@ -8,10 +8,10 @@ const router = express.Router()
 
 
 // Routes
-router.get('/',secure('listplan'),list)
-router.get('/:id',get)
-router.post('/',upsert)
-router.put('/',upsert)
+router.get('/',secure('isAdmin'),list)
+router.get('/:id',secure('general'),get)
+router.post('/',secure('general'),upsert)
+router.put('/',secure('general'),upsert)
 router.delete('/:id',secure('deleteplan'),remove)
 
 // Internal functions
