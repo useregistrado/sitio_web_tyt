@@ -8,7 +8,7 @@
                 <div class="div-card">
                   <div class="div-title-card"><h4 class="title-card">Mas vendido</h4></div>
                   <div class="div-p-megas"><p class="p-megas">3</p></div>
-                  <div class="div-p-price"><p class="p-price">65</p></div>
+                  <div class="div-p-price"><p class="p-price">60</p></div>
                   <div class="div-a-card"><a class="btn-a" href="">Elige este</a></div>
                 </div>
               </b-card>
@@ -18,7 +18,7 @@
                 <div class="div-card">
                   <div class="div-title-card"><h4 class="title-card">Recomendado</h4></div>
                   <div class="div-p-megas"><p class="p-megas">5</p></div>
-                  <div class="div-p-price"><p class="p-price">75</p></div>
+                  <div class="div-p-price"><p class="p-price">70</p></div>
                   <div class="div-a-card"><a class="btn-a" href="">Elige este</a></div>
                 </div>
               </b-card>
